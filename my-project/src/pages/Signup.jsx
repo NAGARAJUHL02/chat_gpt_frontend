@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { User, Mail, Lock, ChevronRight, Github } from 'lucide-react';
+import ParticleBackground from '../components/ParticleBackground';
 
 const Signup = () => {
     const [formData, setFormData] = useState({
@@ -51,7 +52,7 @@ const Signup = () => {
             localStorage.setItem('token_type', token_type);
 
             alert("Signup Successful!");
-            window.location.href = '/';
+            window.location.href = '/login';
         } catch (err) {
             console.error("Signup Error:", err);
             if (err.response) {
@@ -66,10 +67,8 @@ const Signup = () => {
     };
 
     return (
-        <div className="min-h-screen w-full flex items-center justify-center p-4 relative overflow-hidden bg-[#e0e7ff]">
-            {/* Background Gradients to mimic the image aura */}
-            <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-purple-200 rounded-full blur-[120px] opacity-60" />
-            <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-blue-200 rounded-full blur-[120px] opacity-60" />
+        <div className="min-h-screen w-full flex items-center justify-center p-4 relative overflow-hidden bg-slate-50">
+            <ParticleBackground />
 
             {/* Main Glass Card */}
             <div className="relative z-10 w-full max-w-[420px] bg-white/40 backdrop-blur-2xl border border-white/60 rounded-[40px] shadow-2xl overflow-hidden">

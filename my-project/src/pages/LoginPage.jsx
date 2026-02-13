@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Mail, Lock, ChevronRight, Github, Loader2, Chrome } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import ParticleBackground from '../components/ParticleBackground';
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -31,7 +32,7 @@ const Login = () => {
 
       // Success feedback
       alert("Login Successful!");
-      navigate('/');
+      window.location.href = '/';
 
     } catch (err) {
       setError(err.response?.data?.detail || 'Invalid email or password');
@@ -41,10 +42,8 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center p-4 relative overflow-hidden bg-[#eef2ff]">
-      {/* Soft Background Aura */}
-      <div className="absolute top-[-20%] right-[-10%] w-[60%] h-[60%] bg-blue-200/50 rounded-full blur-[120px]" />
-      <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-indigo-200/50 rounded-full blur-[120px]" />
+    <div className="min-h-screen w-full flex items-center justify-center p-4 relative overflow-hidden bg-slate-50">
+      <ParticleBackground />
 
       {/* Glassmorphic Login Card */}
       <div className="relative z-10 w-full max-w-[400px] bg-white/40 backdrop-blur-3xl border border-white/60 rounded-[32px] shadow-2xl">

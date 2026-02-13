@@ -31,9 +31,6 @@ const Sidebar = () => {
                     <button className="p-1.5 hover:bg-gray-200 rounded-lg text-gray-600">
                         <Search size={18} />
                     </button>
-                    <button className="p-1.5 hover:bg-gray-200 rounded-lg text-gray-600">
-                        <LayoutGrid size={18} />
-                    </button>
                 </div>
             </div>
 
